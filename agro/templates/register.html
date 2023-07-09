@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+:root {
+  --success-color: #2ecc71;
+  --error-color: #e74c3c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #d0dacf;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background-image: url(logo\ 7.jfif);
+  background-size: 650px;
+}
+
+.container {
+  background-color: #2e98c5;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  width: 480px;
+}
+
+h2 {
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+.form {
+  padding: 30px 40px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.form-control label {
+  color: #777;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-control input {
+  border: 2px solid #1aa61a;
+  border-radius: 50px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  align-items: flex-start;
+  background-color: #020a10;
+}
+
+.form-control input:focus {
+  outline: 0;
+  border-color: #777;
+}
+
+.form-control.success input {
+  border-color: var(--success-color);
+}
+
+.form-control.error input {
+  border-color: var(--error-color);
+}
+
+.form-control small {
+  color: var(--error-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.form-control.error small {
+  visibility: visible;
+}
+
+button {
+  cursor: pointer;
+  background-color: #020a10;
+  border: 2px solid #34db71;
+  border-radius: 50px;
+  color: white;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 0px;
+  width: 100%;
+}
+
+</style>
+<body>
+    <form action="register" method="post">
+        {% csrf_token %}
+
+    <div class="container">
+        <form id="form" class="form">
+          <h2>Register Form</h2>
+          <div class="form-control">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter username" />
+            <small>Error message</small>
+          </div>
+
+          <div class="form-control">
+            <label for="first_name">first_name</label>
+            <input type="text" id="first_name" name="first_name" placeholder="Enter first_name" />
+            <small>Error message</small>
+          </div>
+
+          <div class="form-control">
+            <label for="last_name">last_name</label>
+            <input type="text" id="last_name" name="last_name" placeholder="Enter last_name" />
+            <small>Error message</small>
+          </div>
+
+
+          <div class="form-control">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="Enter email" />
+            <small>Error message</small>
+          </div>
+          <div class="form-control">
+            <label for="password">Password</label>
+            <input type="password1" id="password" name="password1" placeholder="Enter password" />
+            <small>Error message</small>
+          </div>
+          <div class="form-control">
+            <label for="password2">Confirm Password</label>
+            <input
+              type="password" id="password2" name="password2" placeholder="Enter password again"
+            />
+            <small>Error message</small>
+          </div>
+          <button type="submit">Submit</button>
+          
+        </form>
+      </div>
+    </form>
+    <div>
+        {% for messages in messages %}
+        <h3> {{messages}} </h3>
+        {% endfor %}
+    </div>
+</body>
+</html>

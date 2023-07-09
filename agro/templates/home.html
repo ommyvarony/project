@@ -1,0 +1,91 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+      integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'css/style (5).css' %}">
+    <title>AGRO-MARKET</title>
+  </head>
+  <style>
+
+  </style>
+  <body>
+    <nav>
+      <div class="logo">
+       
+      </div>
+      <ul>
+        <li><a href="home page.html">HOME</a></li>
+        <li><a href="Accounts/cart">PRODUCT</a></li>
+        <!-- <li><a href="#">CONTACT US</a></li> -->
+
+        {% if user.is_authenticated %}
+        <li>hello, {{user.first_name}}</li>
+        <li><a href="Accounts/logout">LOGOUT</a></li>
+        {% else %}
+
+        <li><a href="Accounts/register">REGISTER</a></li>
+        <li><a href="Accounts/login">LOGIN</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+
+    <header>
+      <button id="toggle" class="toggle">
+        <i class="fa fa-bars fa-2x"></i>
+      </button>
+
+      <h1>AGRO-MARKET BUSINESS</h1>
+
+      <p>
+        This is all about selling and delivery products to the customers in a short period of time
+      </p>
+
+      
+    </header>
+
+    <div class="container">
+      <h2>What is agro business about?</h2>
+      <p>
+        Agribusiness is the business sector encompassing farming and farming-related commercial activities. It involves all the steps required to send an agricultural good to market, namely production, processing, and distribution. This industry is an important component of the economy in countries with arable land since agricultural products can be exported.
+      </p>
+  
+
+      <h2> More detail about agro market system</h2>
+
+      <p>
+        Agribusiness treats the different aspects of raising agricultural products as an integrated system. Farmers raise animals and harvest fruits and vegetables with the help of sophisticated harvesting techniques, including the use of GPS to direct operations. Manufacturers develop increasingly efficient machines that can drive themselves. Processing plants determine the best way to clean and package livestock for shipping. While each subset of the industry is unlikely to interact directly with the consumer, each is focused on operating efficiently in order to keep prices reasonable.
+      </p>
+
+      <h2>Benefits of using this website</h2>
+      <ul>
+        <li>Lifetime Access</li>
+        <li>30 Day Money Back</li>
+        <li>Tailored Customer Support</li>
+      </ul>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse quam
+        nostrum, fugiat, itaque natus officia laborum dolorum id accusantium
+        culpa architecto tenetur fuga? Consequatur provident rerum eius ratione
+        dolor officiis doloremque minima optio dignissimos doloribus odio
+        debitis vero cumque itaque excepturi a neque, expedita nulla earum
+        accusamus repellat adipisci veritatis quam. Ipsum fugiat iusto pariatur
+        consectetur quas libero dolor dolores dolorem, nostrum ducimus
+        doloremque placeat accusamus iste, culpa quaerat consequatur?
+      </p>
+    </div>
+
+
+    <script  src="{% static 'javascript/script(3).js' %}"></script>
+  </body>
+</html>
