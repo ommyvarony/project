@@ -1,0 +1,13 @@
+Django==5.0.1
+django-widget-tweaks==1.4.8
+postgresSql
+pgAdmin
+xhtml2pdf
+
+login detail
+username  admin
+pasword admin
+
+customer
+username omens
+pasword 1234
